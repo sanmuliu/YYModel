@@ -912,7 +912,7 @@ static void ModelSetValueForProperty(__unsafe_unretained id model,
                                     [newOne yy_modelSetWithDictionary:one];
                                     if (newOne) [objectArr addObject:newOne];
                                 }
-                            }
+                  　          }
                             ((void (*)(id, SEL, id))(void *) objc_msgSend)((id)model, meta->_setter, objectArr);
                         }
                     } else {
@@ -1467,6 +1467,17 @@ static NSString *ModelDescription(NSObject *model) {
     NSObject *one = [cls new];
     if ([one yy_modelSetWithDictionary:dictionary]) return one;
     return nil;
+}
+
++(NSArray *)yy_modelWithDataArray:(NSArray *)array{
+    NSMutableArray *models = [NSMutableArray array];
+    for (NSDictionary *json in array) {
+        id model = [[self class] yy_modelWithJSON:json];
+        if (models) {
+            [models addObject:model];
+        }
+    }
+    return models;
 }
 
 - (BOOL)yy_modelSetWithJSON:(id)json {

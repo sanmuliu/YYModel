@@ -102,6 +102,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)yy_modelWithDictionary:(NSDictionary *)dictionary;
 
++(NSArray *)yy_modelWithDataArray:(NSArray *)array;
+
 /**
  Set the receiver's properties with a json object.
  
