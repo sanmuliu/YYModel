@@ -102,6 +102,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)yy_modelWithDictionary:(NSDictionary *)dictionary;
 
+/*
+ 新添加方法
+ */
 +(NSArray *)yy_modelWithDataArray:(NSArray *)array;
 
 /**
